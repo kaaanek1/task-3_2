@@ -21,7 +21,7 @@ namespace task3_2
             }
         }
 
-        public override void RndFill()
+        protected override void RndFill()
         {
             Random random = new Random();
                 for (int i = 0; i < len; i++)
@@ -31,7 +31,7 @@ namespace task3_2
         }
 
     
-        public override void UserFill()
+        protected override void UserFill()
         {
             for (int i = 0; i < len; i++)
                 {
