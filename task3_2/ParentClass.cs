@@ -10,9 +10,9 @@ namespace task3_2
             this.fill = fill;
         }
 
-        public abstract void RndFill();
+        protected abstract void RndFill();
 
-        public abstract void UserFill();
+        protected abstract void UserFill();
 
         public abstract double Average();
 
