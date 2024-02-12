@@ -3,11 +3,9 @@ namespace task3_2
     sealed class LVL1: ParentClass
     {
         private int[] array;
-        private int len;
 
         public LVL1(int l, bool fill = false): base(fill)
         {
-            this.len = l;
             array = new int[l];
             if (fill)
             {
@@ -23,8 +21,7 @@ namespace task3_2
 
         protected override void RndFill()
         {
-            Random random = new Random();
-                for (int i = 0; i < len; i++)
+                for (int i = 0; i < array.Length; i++)
                 {
                     array[i] = random.Next(-1000, 1000);
                 }
@@ -33,7 +30,7 @@ namespace task3_2
     
         protected override void UserFill()
         {
-            for (int i = 0; i < len; i++)
+            for (int i = 0; i < array.Length; i++)
                 {
                     Console.Write($"Элемент {i}: ");
                     int x = int.Parse(Console.ReadLine());
@@ -48,15 +45,15 @@ namespace task3_2
             {
                 sum += el;
             }
-            return sum / len;
+            return sum / array.Length;
         }
 
         public override void Print()
         {
             Console.WriteLine("Одномерный массив: ");
-            for (int i = 0; i < len; i++)
+            for (int i = 0; i < array.Length; i++)
             {
-                if (i == len - 1)
+                if (i == array.Length - 1)
                 { 
                     Console.WriteLine($"{array[i]}");
                 }
