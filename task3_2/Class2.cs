@@ -4,15 +4,10 @@ namespace task3_2
     {
         private int[,] array;
 
-        private int a;
-        private int b;
 
         public LVL2(int a, int b, bool fill = false): base(fill)
         {
             array = new int[b, a];
-
-            this.a = a;
-            this.b = b;
             
             if(fill)
             {
@@ -28,9 +23,9 @@ namespace task3_2
 
         protected override void RndFill()
         {
-            for (int i = 0; i < b; i++)
+            for (int i = 0; i < array.GetLength(0); i++)
             {
-                for (int j = 0; j < a; j++)
+                for (int j = 0; j < array.GetLength(1); j++)
                 {
                     array[i, j] = random.Next(-1000, 1000);
                 }
@@ -39,9 +34,9 @@ namespace task3_2
 
         protected override void UserFill()
         {
-            for (int i = 0; i < b; i++)
+            for (int i = 0; i < array.GetLength(0); i++)
             {
-                for (int j = 0; j < a; j++)
+                for (int j = 0; j < array.GetLength(1); j++)
                 {
                     Console.Write($"Элемент ({i},{j}): ");
                     array[i, j] = int.Parse(Console.ReadLine());
@@ -52,24 +47,24 @@ namespace task3_2
         public override double Average()
         {
             int sum = 0;
-            for (int i = 0; i < b; i++)
+            for (int i = 0; i < array.GetLength(0); i++)
             {
-                for (int j = 0; j < a; j++)
+                for (int j = 0; j < array.GetLength(1); j++)
                 {
                     sum += array[i, j];
                 }
             }
-            return sum/(a*b);
+            return sum/(array.GetLength(0)*array.GetLength(1));
         }
 
         public override void Print()
         {
-            Console.WriteLine($"Матрица размером [{b}X{a}]");
-            for (int i = 0; i < b; i++)
+            Console.WriteLine($"Матрица размером [{array.GetLength(0)}X{array.GetLength(1)}]");
+            for (int i = 0; i < array.GetLength(0); i++)
             {
-                for (int j = 0; j < a; j++)
+                for (int j = 0; j < array.GetLength(1); j++)
                 {
-                    if (j == a - 1) { Console.WriteLine(array[i, j]); }
+                    if (j == array.GetLength(1) - 1) { Console.WriteLine(array[i, j]); }
                     else { Console.Write($"{array[i, j]} "); }
                 }
             }
