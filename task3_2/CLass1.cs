@@ -1,3 +1,5 @@
+using System;
+
 namespace task3_2
 {
     sealed class LVL1: ParentClass
@@ -23,7 +25,6 @@ namespace task3_2
 
         protected override void RndFill()
         {
-            Random random = new Random();
                 for (int i = 0; i < len; i++)
                 {
                     array[i] = random.Next(-1000, 1000);

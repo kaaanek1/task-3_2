@@ -1,3 +1,5 @@
+using System;
+
 namespace task3_2
 {
     abstract class ParentClass
