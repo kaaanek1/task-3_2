@@ -5,12 +5,10 @@ namespace task3_2
     class LVL3: ParentClass
     {
         private int[][] array;
-        private int l;
 
         public LVL3(int l, bool fill = false): base(fill)
         {
             array = new int[l][];
-            this.l = l;
 
             if (fill)
             {
@@ -26,7 +24,7 @@ namespace task3_2
 
         protected override void RndFill()
         {
-            for (int i = 0; i < l; i++)
+            for (int i = 0; i < array.Length; i++)
             {
                 Console.Write($"Длина {i} подмассива: ");
                 int l1 = int.Parse(Console.ReadLine());
@@ -41,7 +39,7 @@ namespace task3_2
 
         protected override void UserFill()
         {
-            for (int i = 0; i < l; i++)
+            for (int i = 0; i < array.Length; i++)
             {
                 Console.Write($"Длина {i} подмассива: ");
                 int l1 = int.Parse(Console.ReadLine());
@@ -59,7 +57,7 @@ namespace task3_2
         {
             int sum = 0;
             int el = 0;
-            for (int i = 0; i < l; i++)
+            for (int i = 0; i < array.Length; i++)
             {
                 for (int j = 0; j < array[i].Length; j++)
                 {
@@ -74,7 +72,7 @@ namespace task3_2
         public override void Print()
         {
             Console.WriteLine("Ступенчатый массив:");
-            for (int i = 0; i < l; i++)
+            for (int i = 0; i < array.Length; i++)
             {
                 for (int j = 0; j < array[i].Length; j++)
                 {
